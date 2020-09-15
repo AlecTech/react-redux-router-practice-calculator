@@ -1,14 +1,16 @@
+//this will return and object. but my input will be a string
 const viewResults = resultContent => {
+    //can do console.log() here to chech whats passed in
     return{
         // This is the NAME of our action.
       // "type" is how our 'reducer' knows what we want to do.
       type:'VIEW_FIELD',
         // This is the DATA we are passing through to the reducer...
-      // so that IT can to ITS JOB!
+      // payload is a property
       payload: resultContent
     };
 }
-export { viewResults};
+export {viewResults};
 
 // const addNewToDo = toDoContent => {
 //     return {

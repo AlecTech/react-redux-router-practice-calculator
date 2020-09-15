@@ -1,20 +1,29 @@
 
+//state (default value) this is where object will go
+//(this could be called abc not state)
+//action-function (type of request) (this could be called abc not action)
+//STORE will be running the REDUCER. It will push inside[] currect state to be updated
+//and stores , action) that was sent
 const resultlistReducer = (state = [], action) => {
-    // Which action is this? What should we do!?
+    // Which action is this. inside switch check a value, if it maches this then do that
+    //here we check what type or NAME of action we are doing. action.type or could be type.name
     switch( action.type) {
-         // If this is the ADD NEW action...
+         // If this is the VIEW FIELD NEW action...
         case 'VIEW_FIELD':
-             // Prepare a new task object.
+            //here you can console log to chech whats missing
+             // Then create this new entry
             const newField = {
                 task:action.payload
             };
             // Create a COPY of the original state array.
+            //here we update a STATE . [...] is a spread operator
+            //what goes inside [ ] we'll take and create new array by [...]
             const newResultList = [...state];
-            // Add the new task to the new array.
+            // Now we have new array and new entry so lets Add the new entry to the new array.
             newResultList.push(newField);
              // Return the updated state (overwrites the state.)
             return newResultList;
-
+            // so we just done REDUX way of updating State
         default:
             return state;
     }
