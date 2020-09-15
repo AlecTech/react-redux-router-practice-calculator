@@ -10,12 +10,13 @@ import {viewResults} from './actions/resultlistA';
 //importing library that will help react and redux talk through components.
 //Provider a Class sort of like component
 import { Provider } from 'react-redux';
-
-// import Calculator from './components/Calculator';
-// import Calculator2 from './components/Calculator2';
+import Calculator from './components/Calculator';
+import Calculator2 from './components/Calculator2';
 
 // import './calculator.css';
 import CalculatorOutput from './components/CalculatorOutput';
+import CalculatorList from './components/CalculatorList';
+
 
 //this start area is GLOBAL
 //creating STORE here
@@ -42,7 +43,9 @@ ReactDOM.render(
   //store is prop in this case. This could be {AppStore}
   //Provider provides to subsecuent components 
   <Provider store={store}>
+    <Calculator2 heading="Welcome to my Calculator!" input1="Input Field:"  result/>
     <CalculatorOutput/>
+    <CalculatorList />
   </Provider>,
   document.getElementById('root')
 );
