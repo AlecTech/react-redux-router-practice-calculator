@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
+//this components is local and doesnt have access to dispatch comand so we 
+//importing a library to help us connect react component to redux store
+import { connect } from 'react-redux';
 
-function CalculatorOutput()
-{
-    const [result, setNewAnsw] = useState();
+//inside () we need props if its a 'read only' content
+function CalculatorOutput( props )
+{   //inside ('') is default state but it could be a boolean or an array
+//this is a local state, wont be accessed by other components
+    const [result, setNewAnsw] = useState('');
+    //create a function to control on submit event
+    //
+    const submitResult = event => {
+        event.preventDefault();
 
+    }
     return (
         <>
             <h2> Past Calculations</h2>
-            <form>
+            <form onSubmit={submitResult}>
                 <label htmlFor="task">List:</label>
                 <input 
                     id="task" 
@@ -19,10 +29,14 @@ function CalculatorOutput()
             </form>
             <ul></ul>
         </>
-
     );
 }
-export default CalculatorOutput;
+//this is only where we use connect import library. Connect()() means this first function returns a function
+//and we passing argument into the function thats returning. So thats how we connect REDUX to component
+//think of 'state' as a STORE. So whats comming from REDUX is going to be a part of our props. (prop.ToDos)
+export default connect(
+    state => { return { CalculatorOutput: state } }
+    )(CalculatorOutput);
 
 
 
