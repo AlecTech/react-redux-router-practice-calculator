@@ -16,6 +16,8 @@ import Calculator2 from './components/Calculator2';
 import './calculator.css';
 // import CalculatorOutput from './components/CalculatorOutput';
 import CalculatorList from './components/CalculatorList';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
 
 
 //this start area is GLOBAL
@@ -44,8 +46,11 @@ ReactDOM.render(
   //Provider provides to subsecuent components 
   //<CalculatorOutput/>
   <Provider store={store}>
+    <h1>React-Redux ROUTER Practice</h1>
     <Calculator2 heading="Welcome to my Calculator!" input1="Input Field:"  result/>
-    
+    <Router>
+      <Route></Route>
+    </Router>
     <CalculatorList />
   </Provider>,
   document.getElementById('root')
