@@ -10,13 +10,14 @@ import {viewResults} from './actions/resultlistA';
 //importing library that will help react and redux talk through components.
 //Provider a Class sort of like component
 import { Provider } from 'react-redux';
-// import Calculator from './components/Calculator';
+import Calculator from './components/Calculator';
 import Calculator2 from './components/Calculator2';
 
 import './calculator.css';
 // import CalculatorOutput from './components/CalculatorOutput';
 import CalculatorList from './components/CalculatorList';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Nav from './components/Nav';
 
 
 
@@ -47,11 +48,13 @@ ReactDOM.render(
   //<CalculatorOutput/>
   <Provider store={store}>
     <h1>React-Redux ROUTER Practice</h1>
-    <Calculator2 heading="Welcome to my Calculator!" input1="Input Field:"  result/>
+    {/* <Calculator2 heading="Welcome to my Calculator!" input1="Input Field:"  result/> */}
     <Router>
-      <Route></Route>
+      <Nav />
+      <Route path="/form2" component={Calculator2} />
+      <Route path="/" component={CalculatorList} />
+      <Route path="/form1" component={Calculator} />
     </Router>
-    <CalculatorList />
   </Provider>,
   document.getElementById('root')
 );
