@@ -8,28 +8,29 @@ import {viewResults} from '../actions/resultlistA';
 function Calculator2 (props)
 { // Every component should return JSX.
   const [new1Num, setNew1Num] = useState('');
-
-  
   const [result, setNewAnsw] = useState('');
 
 // method for evaluating expressing was found => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
   const onFormSubmit = event => 
   {
     event.preventDefault();
-    // console.log(new1Num);
-    
-    let result = eval(new1Num);
-    // console.log(result);
-
-    setNewAnsw(result);
-
-    let newString = `${new1Num} = ${result}`;
-
-
-    // props.dispatch(viewResults(new1Num));
-    // props.dispatch(viewResults(result));
-    props.dispatch(viewResults(newString));
-    
+   
+    //const stringInt = Number;
+    //found this regex on https://regex101.com/r/w74GSk/4
+      if (/(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/.test(new1Num))
+      {
+        let result = eval(new1Num);
+        setNewAnsw(result);
+        let newString = `${new1Num} = ${result}`;
+        // props.dispatch(viewResults(new1Num));
+        // props.dispatch(viewResults(result));
+        props.dispatch(viewResults(newString));
+        
+      } else 
+      {
+        alert("Not a valid input");
+      }
+   
   }
   
   let heading = props.heading;
@@ -50,7 +51,6 @@ function Calculator2 (props)
       <input type='submit' className='submitBtn success' value='Submit'/>
       <h3 className="output">RESULT: 
         <span> {new1Num} </span> 
-     
         <span> = {result} </span>
       </h3>
       </form>
