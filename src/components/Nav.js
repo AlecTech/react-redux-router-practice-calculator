@@ -1,26 +1,27 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../css/nav.css';
 
 function Nav ()
 {
     return (
 
-        <nav>
+        <nav className="calc-nav">
             <h2>Calculator Navigation Bar</h2>
             <ul>
                 <li>
                     <Link to="/">
-                    Home (Calculators List)
+                    Home (Calculators Archive)
                     </Link>
                 </li>
                 <li>
                     <Link to="/form1">
-                    Form1 Enter Expression (Calculators Form)
+                    Separate input fields (Local Calculators Form)
                     </Link>
                 </li>
                 <li>
                     <Link to="/form2">
-                    Form2 Enter Expression (Calculators Form)
+                    Single input field (Global Calculators Form)
                     </Link>
                 </li>
             </ul>

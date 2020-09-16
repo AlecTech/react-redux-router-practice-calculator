@@ -1,0 +1,41 @@
+/* *{outline: .1px solid #ff0000} */
+#root {
+    background-color: rgb(233, 155, 60);
+}
+.calc-nav ul{
+    display: flex;
+    flex-direction: row;
+    color: #333;
+    justify-content: space-around;
+}
+.calc-nav a:hover {
+    border-color: #4CAF50;
+    background-color: green;
+    color: black;
+  }
+  .calc-nav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  .calc-nav {
+      display: flex;
+      flex-direction: column;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    align-items: center;
+  }
+
+.calc-nav, .calc-nav li{
+    margin: 5%;
+    padding: 2%;
+    
+}
+
+.calc-nav h2{
+    color: white;
+    
+}
