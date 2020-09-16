@@ -10,6 +10,11 @@ function Nav ()
             <h2>Calculator Navigation Bar</h2>
             <ul>
                 <li>
+                    <Link to="/Home">
+                    Home Welcome Page
+                    </Link>
+                </li>
+                <li>
                     <Link to="/">
                     Home (Calculators Archive)
                     </Link>

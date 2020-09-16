@@ -14,10 +14,12 @@ import Calculator from './components/Calculator';
 import Calculator2 from './components/Calculator2';
 // import Hello from './components/Hello';
 import './calculator.css';
-import CalculatorOutput from './components/CalculatorOutput';
+// import CalculatorOutput from './components/CalculatorOutput';
 import CalculatorList from './components/CalculatorList';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Nav from './components/Nav';
+import Home from './components/Home';
+
 
 
 
@@ -51,6 +53,7 @@ ReactDOM.render(
     {/* <Calculator2 heading="Welcome to my Calculator!" input1="Input Field:"  result/> */}
     <Router>
       <Nav />
+      <Route path="/home" component={Home} />
       <Route path="/" component={CalculatorList} exact />
       <Route path="/form1" component={Calculator} />
       <Route path="/form2" component={Calculator2}/>
