@@ -1,6 +1,8 @@
 /* *{outline: .1px solid #ff0000} */
 #root {
     background-color: rgb(233, 155, 60);
+    --color-text: black;
+    --color-background: lightgray;
 }
 .calc-nav ul{
     display: flex;

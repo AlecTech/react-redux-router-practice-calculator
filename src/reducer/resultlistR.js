@@ -24,6 +24,14 @@ const resultlistReducer = (state = [], action) => {
              // Return the updated state (overwrites the state.)
             return newResultList;
             // so we just done REDUX way of updating State
+            case 'CHANGE_THEME':
+                const newColor = {
+                    task:action.payload
+                };
+                const newResultColor = [...state];
+                newResultColor.push(newColor);
+            return newResultColor;
+
         default:
             return state;
     }

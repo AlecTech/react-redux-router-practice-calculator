@@ -6,7 +6,7 @@ import './index.css';
 import { createStore } from 'redux';
 //importing REDUCER from our folder
 import resultlistReducer from './reducer/resultlistR';
-import {viewResults} from './actions/resultlistA';
+import {viewResults, changeColor} from './actions/resultlistA';
 //importing library that will help react and redux talk through components.
 //Provider a Class sort of like component
 import { Provider } from 'react-redux';
@@ -37,7 +37,7 @@ store.subscribe( () => console.log( store.getState() ) );
 //Dispatch expected properly format action
 //so here we updating or mutating the STORE
 store.dispatch( viewResults( "1+1" ) );
-store.dispatch( viewResults( "2+2" ) );
+// store.dispatch( changeColor( "black" ) );
 
 /* <Calculator heading="Welcome to my Calculator!" input1="Input 1:" input2="Input 2:" result/>
     <Calculator2 heading="Welcome to my Calculator!" input1="Input 1:"  result/>
